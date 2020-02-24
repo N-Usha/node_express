@@ -44,4 +44,4 @@ variables:
   value: 'ubuntu-latest'
 
 stages:
-- template: BuildStage.yml@templates
+- template: BuildStage.yaml@templates
