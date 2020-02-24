@@ -45,3 +45,9 @@ variables:
 
 stages:
 - template: BuildStage.yaml@templates
+  parameters:
+    vmImageName: $(vmImageName)
+    imageRepository: $(imageRepository)
+    dockerfilePath: $(dockerfilePath)
+    dockerRegistryServiceConnection: $(dockerRegistryServiceConnection)
+    tag: $(tag)
