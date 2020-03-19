@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-webapp-express",
+  "name": "@n-usha/nodejs-webapp-express",
   "version": "0.0.0",
   "private": false,
   "scripts": {
@@ -22,6 +22,13 @@
   },
   "engines": {
     "node": ">6.0.0"
+  },
+  "bin": {
+    "nodejs-webapp-express": "./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/N-Usha/node_express.git"
   },
   "publishConfig": {
     "registry":"https://npm.pkg.github.com/"
