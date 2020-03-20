@@ -49,5 +49,3 @@ jobs:
       - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}" > ~/.npmrc
       - run: npm ci
       - run: npm publish
-        env:
-         NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
