@@ -12,6 +12,7 @@ env:
   AZURE_WEBAPP_NAME: nodeAppgh   # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '10.x'                # set this to the node version to use
+  NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
 
 jobs:
   build:
@@ -21,8 +22,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - run: rm .npmrc
-      - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}" > ~/.npmrc
+      #- run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}" > ~/.npmrc
       - run: npm ci
       - run: npm test
 
@@ -46,7 +46,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - run: rm .npmrc
-      - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}" > ~/.npmrc
+      #- run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}" > ~/.npmrc
       - run: npm ci
       - run: npm publish
+        env:
+         NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
