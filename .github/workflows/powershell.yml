@@ -18,8 +18,8 @@ jobs:
         az webapp list --query "[?state=='Running']"
    
     - name: Run Azure PowerShell script
-       uses: azure/powershell@v1
-       with:
+      uses: azure/powershell@v1
+      with:
         inlineScript: |
           Get-AzVM -ResourceGroupName "ActionsDemo"
           azPSVersion: '3.1.0'
