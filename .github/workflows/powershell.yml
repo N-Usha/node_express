@@ -23,4 +23,4 @@ jobs:
       with:
         inlineScript: |
           Get-AzVM -ResourceGroupName "ActionsDemo"
-          azPSVersion: '3.1.0'
+        azPSVersion: '3.1.0'
