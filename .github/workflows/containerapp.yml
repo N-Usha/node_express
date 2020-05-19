@@ -6,13 +6,13 @@ on: push
 # For help, go to https://github.com/Azure/Actions
 #
 # Set up the following secrets in your repository:
-#   AZURE_CREDENTIALS, REGISTRY_USERNAME, REGISTRY_PASSWORD
+#   AZURE_CREDENTIALS, REGISTRY_USERNAME, REGISTRY_PASSWORD, REGISTRY_URL
 # 2. Change these variables for your configuration:
 env:
   AZURE_RESOURCE_GROUP: ActionsDemo   # set this to your Azure Resource group's name  
   AZURE_WEBAPP_NAME: AppWithContainer   # set this to your application's name
   AZURE_APP_PLAN: ActionPlan  # set this to your App service plan's name - Needed only if you are provisioning the app in the workflow
-  CONTAINER_REGISTRY: ${{ secrets.REGISTRY_USERNAME }}.azurecr.io   # set secret with Container Registry name
+  CONTAINER_REGISTRY: ${{ secrets.REGISTRY_URL }}   # set secret with Container Registry name
 jobs:
   provision-webapp:
     runs-on: ubuntu-latest
